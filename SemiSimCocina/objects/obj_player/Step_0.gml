@@ -1,10 +1,19 @@
 /// @description Player movement
 
 // Check keys for movement
-move_right = keyboard_check(vk_right);
-move_left = keyboard_check(vk_left);
-move_up = keyboard_check(vk_up);
-move_down = keyboard_check(vk_down);
+if (global.player_control == true) {
+	move_right = keyboard_check(vk_right);
+	move_left = keyboard_check(vk_left);
+	move_up = keyboard_check(vk_up);
+	move_down = keyboard_check(vk_down);
+}
+
+if (global.player_control == false) {
+	move_right = 0;
+	move_left = 0;
+	move_up = 0;
+	move_down = 0;
+}
 
 // Calculate movement
 vx = ((move_right - move_left) * walk_speed);
@@ -56,10 +65,14 @@ if (vx != 0 || vy != 0) {
 // Check for collision with NPCs
 nearby_npc = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_npc, false, true);
 if (nearby_npc) {
-	// Do something
+	// Pop up prompt
+	if (npc_prompt == noone || npc_prompt == undefined) {
+		npc_prompt = scr_show_prompt(nearby_npc, nearby_npc.x, nearby_npc.y -350);	
+	}
 }
 if (!nearby_npc) {
-	// Do something else
+	// Get rid of prompt
+	scr_dismiss_prompt(npc_prompt, 0);
 }
 
 // Depyh sorting

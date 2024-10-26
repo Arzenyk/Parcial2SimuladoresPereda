@@ -11,3 +11,4 @@ move_up = 0;
 move_down = 0;
 nearby_npc = noone;
 look_range = 100;
+npc_prompt = noone;

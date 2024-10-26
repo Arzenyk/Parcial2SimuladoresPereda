@@ -53,5 +53,14 @@ if (vx != 0 || vy != 0) {
 	}
 }
 
+// Check for collision with NPCs
+nearby_npc = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_npc, false, true);
+if (nearby_npc) {
+	// Do something
+}
+if (!nearby_npc) {
+	// Do something else
+}
+
 // Depyh sorting
 depth =- y;

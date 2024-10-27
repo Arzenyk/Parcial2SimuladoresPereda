@@ -21,13 +21,7 @@ vy = ((move_down - move_up) * walk_speed);
 
 // If idle
 if (vx == 0 && vy == 0) {
-	// Change idle Sprite based on last direction
-	switch dir {
-		case 0 : sprite_index = spr_player_right; break;
-		case 1 : sprite_index = spr_player_up; break;
-		case 2 : sprite_index = spr_player_left; break;
-		case 3 : sprite_index = spr_player_down; break;
-	}
+	my_state = player_state.idle;
 }
 
 // If moving
@@ -39,27 +33,26 @@ if (vx != 0 || vy != 0) {
 		y += vy;
 	}
 	
-	// Change walking Sprite based on direction
+	// Change direction based on movement
 	// right
 	if (vx > 0) {
-		sprite_index = spr_player_right;
 		dir = 0;
 	}
 	// left
 	if (vx < 0) {
-		sprite_index = spr_player_left;
 		dir = 2;
 	}
 	// down
 	if (vy > 0) {
-		sprite_index = spr_player_down;
 		dir = 3;
 	}
 	// up
 	if (vy < 0) {
-		sprite_index = spr_player_up;
 		dir = 1;
 	}
+	
+	// Set State
+	my_state = player_state.walking;
 }
 
 // Check for collision with NPCs
@@ -73,6 +66,20 @@ if (nearby_npc) {
 if (!nearby_npc) {
 	// Get rid of prompt
 	scr_dismiss_prompt(npc_prompt, 0);
+}
+
+// Check for collision with Items
+nearby_item = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_item, false, true);
+if (nearby_item) {
+	// Pop up prompt
+	if (item_prompt == noone || item_prompt == undefined) {
+		show_debug_message("obj_player has found an item!");
+		item_prompt = scr_show_prompt(nearby_item, nearby_item.x, nearby_item.y-250);
+	}
+}
+if (!nearby_item) {
+	// Get rid of prompt
+	scr_dismiss_prompt(item_prompt, 1);
 }
 
 // Depyh sorting

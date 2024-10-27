@@ -25,6 +25,7 @@
     {"name":"inst_319A5896","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_54F026C2","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_3CB46FDF","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_7A5EA60D","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -50,6 +51,7 @@
         {"$GMRInstance":"v1","%Name":"inst_30AF4D7F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_30AF4D7F","objectId":{"name":"obj_tabla_vacia","path":"objects/obj_tabla_vacia/obj_tabla_vacia.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1602.5,"y":38.0,},
         {"$GMRInstance":"v1","%Name":"inst_54F026C2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54F026C2","objectId":{"name":"obj_cliente","path":"objects/obj_cliente/obj_cliente.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.96875,"scaleY":4.90625,"x":662.53125,"y":999.3125,},
         {"$GMRInstance":"v1","%Name":"inst_3CB46FDF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3CB46FDF","objectId":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":10.75,"scaleY":10.75,"x":-172.0,"y":-172.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7A5EA60D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7A5EA60D","objectId":{"name":"obj_item_carne_cocida","path":"objects/obj_item_carne_cocida/obj_item_carne_cocida.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1257.0,"y":534.5,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"TilesMain","depth":200,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"TilesMain","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":150,"SerialiseWidth":250,"TileSerialiseData":[
           38,39,40,41,42,43,44,31,32,33,34,35,36,37,38,39,40,41,42,43,44,31,32,33,34,35,36,37,38,39,40,41,42,43,

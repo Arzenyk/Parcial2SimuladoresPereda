@@ -2,3 +2,13 @@
 
 // Game variables
 global.player_control = true;
+
+// Player States
+enum player_state {
+	idle,
+	walking,
+	picking_up,
+	carrying,
+	carry_idle,
+	putting_down,
+}

@@ -21,7 +21,17 @@ vy = ((move_down - move_up) * walk_speed);
 
 // If idle
 if (vx == 0 && vy == 0) {
-	my_state = player_state.idle;
+	// If not picking up or putting down an item
+	if (my_state != player_state.picking_up && my_state != player_state.putting_down){
+		// If does not has item
+		if (has_item == noone) {
+			my_state = player_state.idle;
+		}
+		// If holding an item
+		else {
+			my_state = player_state.carry_idle;
+		}
+	}
 }
 
 // If moving
@@ -51,8 +61,14 @@ if (vx != 0 || vy != 0) {
 		dir = 1;
 	}
 	
-	// Set State
-	my_state = player_state.walking;
+	// Set state
+	// If does not have an item
+	if (has_item == noone) {
+		my_state = player_state.walking;
+	}
+	else {
+		my_state = player_state.carrying
+	}
 }
 
 // Check for collision with NPCs
@@ -70,17 +86,28 @@ if (!nearby_npc) {
 
 // Check for collision with Items
 nearby_item = collision_rectangle(x - look_range, y - look_range, x + look_range, y + look_range, obj_par_item, false, true);
-if (nearby_item) {
+if (nearby_item && !nearby_npc) {
 	// Pop up prompt
 	if (item_prompt == noone || item_prompt == undefined) {
 		show_debug_message("obj_player has found an item!");
 		item_prompt = scr_show_prompt(nearby_item, nearby_item.x, nearby_item.y-250);
 	}
 }
-if (!nearby_item) {
+if (!nearby_item || nearby_npc) {
 	// Get rid of prompt
 	scr_dismiss_prompt(item_prompt, 1);
 }
 
+// If picking up an item
+if (my_state == player_state.picking_up) {
+	if (image_index >= image_number-1) {
+		my_state = player_state.carrying;
+		global.player_control = true;
+	}
+}
+
 // Depyh sorting
 depth =- y;
+
+// Auto-choose Sprite based on state and direction
+sprite_index = player_spr[my_state][dir];

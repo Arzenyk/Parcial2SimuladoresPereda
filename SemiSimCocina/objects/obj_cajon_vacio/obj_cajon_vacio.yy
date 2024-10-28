@@ -31,7 +31,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_cajon_vacio",
     "path":"sprites/spr_cajon_vacio/spr_cajon_vacio.yy",

@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cliente_normal_down",
-    "path":"sprites/spr_cliente_normal_down/spr_cliente_normal_down.yy",
+    "name":"spr_cliente_normal_right",
+    "path":"sprites/spr_cliente_normal_right/spr_cliente_normal_right.yy",
   },
   "spriteMaskId":null,
   "visible":true,

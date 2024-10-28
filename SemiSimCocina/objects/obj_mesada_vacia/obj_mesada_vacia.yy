@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_mesada_vacia",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_mesada_vacia",
   "overriddenProperties":[],
@@ -31,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_mesada_vacia",
     "path":"sprites/spr_mesada_vacia/spr_mesada_vacia.yy",

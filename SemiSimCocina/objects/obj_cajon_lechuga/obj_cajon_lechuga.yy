@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_cajon_lechuga",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_cajon_lechuga",
   "overriddenProperties":[],
@@ -12,8 +10,8 @@
     "path":"folders/Objects/Muebles/Cajones.yy",
   },
   "parentObjectId":{
-    "name":"obj_par_enviroment",
-    "path":"objects/obj_par_enviroment/obj_par_enviroment.yy",
+    "name":"obj_par_item",
+    "path":"objects/obj_par_item/obj_par_item.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

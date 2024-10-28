@@ -12,7 +12,7 @@ switch fade_prompt {
 		if (image_alpha >= 1) {
 			fade_prompt = "fadeVisible";
 			}
-		}; break;
+		} break;
 	// Fade out
 	case "fadeOut": {
 		if (image_alpha > 0) {
@@ -23,5 +23,5 @@ switch fade_prompt {
 			// Queue up destroy
 			alarm[0] = 2;
 			}
-		}; break;
+		} break;
 	}

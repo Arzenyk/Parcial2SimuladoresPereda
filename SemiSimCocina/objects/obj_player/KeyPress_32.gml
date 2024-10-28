@@ -10,7 +10,7 @@ if (global.player_control == true) {
 		if (has_item == noone || has_item == undefined) {
 			_text = nearby_npc.my_text;
 			if (!instance_exists(obj_textbox)) {
-				iii = instance_create_depth(nearby_npc.x, nearby_npc.y-350, -10000, obj_textbox);
+				var iii = instance_create_depth(nearby_npc.x, nearby_npc.y-350, -10000, obj_textbox);
 				iii.text_to_show = _text;
 			}
 		}
@@ -28,6 +28,22 @@ if (global.player_control == true) {
 			// Change state of item we are picking up
 			with (has_item) {
 				my_state = item_state.taken;
+			}
+		}
+	// If not near an NPC or another item
+	if (!nearby_item && !nearby_npc) {
+		// Put down an item
+		if (has_item != noone) {
+			my_state = player_state.putting_down;
+			image_index = 0;
+			global.player_control = false;
+			// Change state of item being carry
+			with (has_item) {
+				put_down_y = obj_player.y+5;
+				my_state = item_state.putting_back;
+			}
+			// Reset item
+			has_item = noone;
 			}
 		}
 	}

@@ -18,5 +18,5 @@ enum item_state {
 	idle,
 	taken,
 	used,
-	puting_back,
+	putting_back,
 }

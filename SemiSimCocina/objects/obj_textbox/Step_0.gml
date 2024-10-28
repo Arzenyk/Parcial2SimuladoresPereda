@@ -10,7 +10,7 @@ switch fade_textbox {
 		if (image_alpha == 1) {
 			fade_textbox = 1;
 			}
-		}; break;
+		} break;
 	// Fade out
 	case 2: {
 		if (image_alpha > 0) {
@@ -21,5 +21,5 @@ switch fade_textbox {
 			// Queue up destroy
 			alarm[0] = 2;
 			}
-		}; break;
+		} break;
 	}

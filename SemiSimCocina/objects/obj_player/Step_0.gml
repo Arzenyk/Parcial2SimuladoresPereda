@@ -19,6 +19,11 @@ if (global.player_control == false) {
 vx = ((move_right - move_left) * walk_speed);
 vy = ((move_down - move_up) * walk_speed);
 
+if has_item != noone {
+
+	nearby_item = noone;
+}
+
 // If idle
 if (vx == 0 && vy == 0) {
 	// If not picking up or putting down an item
@@ -112,6 +117,17 @@ if (!nearby_item || nearby_npc) {
 if (my_state == player_state.picking_up) {
 	if (image_index >= image_number-1) {
 		my_state = player_state.carrying;
+		global.player_control = true;
+	}
+}
+
+// If putting down an item
+if (my_state == player_state.putting_down) {
+	// Reset weight
+	carry_limit = 0;
+	// Reset state once animation finishes
+	if (image_index >= image_number-1) {
+		my_state = player_state.idle;
 		global.player_control = true;
 	}
 }
